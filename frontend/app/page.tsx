@@ -5,7 +5,7 @@ import DataTable from './utils/DataTable';
 import { useState, useEffect } from 'react';
 import { supabase } from './utils/supabase';
 
-import { noto, raleway } from './utils/fonts';
+import { raleway } from './utils/fonts';
 
 export default function Home() {
   const [companies, setCompanies] = useState([])

@@ -22,9 +22,6 @@ import countries from 'i18n-iso-countries'
 //   companies: Company[];
 // }
 
-const getCountryFromCode = (countryCode: string) => {
-    return countries.getName(countryCode, 'en', { select: 'official' }) || 'Unknown Country';
-};
 
 const DataTable:React.FC<DataTableProps> = ({companies}) => {
   const [curPage, setCurPage] = useState(1);
