@@ -2,24 +2,9 @@ import React from 'react';
 import { useState } from 'react';
 
 import Flag from 'react-world-flags';
-
+import { DataTableProps } from './types';
 // Define a type for the data structure
-// interface Company {
-//   id: number;
-//   company_name: string;
-//   employee_size: string;
-//   website: string;
-//   flexibility: string;
-//   address_street: string;
-//   address_district: string;
-//   company_log: string;
-//   headquarter_country: string;
-//   industry: string;
-//   linkedin_url: string;
-// }
-// interface DataTableProps {
-//   companies: Company[];
-// }
+
 
 
 const DataTable:React.FC<DataTableProps> = ({companies}) => {

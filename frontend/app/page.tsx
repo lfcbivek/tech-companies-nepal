@@ -6,9 +6,11 @@ import { useState, useEffect } from 'react';
 import { supabase } from './utils/supabase';
 
 import { raleway } from './utils/fonts';
+import { Company } from './utils/types';
+
 
 export default function Home() {
-  const [companies, setCompanies] = useState([])
+  const [companies, setCompanies] = useState<Company[]>([]);
 
   useEffect(() => {
     async function getCompanies() {
