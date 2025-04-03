@@ -1,8 +1,11 @@
+'use client';
+
 import React from 'react';
 import { useState } from 'react';
 
 import Flag from 'react-world-flags';
 import { DataTableProps } from './types';
+import Image from '@/node_modules/next/image';
 // Define a type for the data structure
 
 
@@ -73,7 +76,14 @@ const DataTable:React.FC<DataTableProps> = ({companies}) => {
                   <td className="py-8 px-4 text-2xl">{company.industry}</td>
                   <td className="py-8 px-4 text-2xl">{company.address_street ? `${company.address_street}, ${company.address_district}` : `No Address Available`} </td>
                   <td className="py-8 px-4 text-2xl">
-                      <a href={company.linkedin_url} target='_blank'><img src="linkedin.png" width='30px' height='20px' /></a>
+                      <a href={company.linkedin_url} target='_blank'>
+                        <Image
+                          src="/linkedin.png"
+                          alt="LinkedIn"
+                          width={30}
+                          height={30}
+                        />
+                      </a>
                   </td>
               </tr>
             ))}

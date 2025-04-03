@@ -1,31 +1,21 @@
-'use client'
-
 import DataTable from './utils/DataTable';
 
-import { useState, useEffect } from 'react';
 import { supabase } from './utils/supabase';
 
 import { raleway } from './utils/fonts';
-import { Company } from './utils/types';
 
+export default async function Home() {
+  // Fetch the companies directly on the server
+  const { data: companies, error } = await supabase.from('companies').select();
 
-export default function Home() {
-  const [companies, setCompanies] = useState<Company[]>([]);
-
-  useEffect(() => {
-    async function getCompanies() {
-      const { data: companies, error } = await supabase.from('companies').select()
-      if(error) {
-        console.log("error")
-        console.log(error);
-      }
-      if (companies && companies.length > 1) {
-        setCompanies(companies)
-      }
-    }
-
-    getCompanies();
-  }, [])
+  if (error) {
+    console.error('Error fetching companies:', error);
+    return (
+      <div>
+        <h1>Error fetching companies</h1>
+      </div>
+    );
+  }
   return (
     <div className={`${raleway.className} main-container`}>
       <h1> List of Tech Companies operating in Nepal</h1>
