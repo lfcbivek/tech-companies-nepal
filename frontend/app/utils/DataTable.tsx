@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 
 import Flag from 'react-world-flags';
-import countries from 'i18n-iso-countries'
 
 // Define a type for the data structure
 // interface Company {
