@@ -17,7 +17,7 @@ export default function Home() {
         console.log("error")
         console.log(error);
       }
-      if (companies.length > 1) {
+      if (companies && companies.length > 1) {
         setCompanies(companies)
       }
     }
